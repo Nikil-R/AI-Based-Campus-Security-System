@@ -1,0 +1,88 @@
+/* src/App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: #1b1b2f;
+  color: #e0e0e0;
+  transition: margin-left 0.3s ease;
+}
+
+/* Shift main content when sidebar expands */
+.sidebar:hover ~ .main-content {
+  margin-left: 240px;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1b1b2f;
+  overflow-y: auto;
+  margin-left: 60px; /* collapsed sidebar width */
+  transition: margin-left 0.3s ease;
+  padding: 20px 30px;
+}
+
+/* Navbar */
+.navbar {
+  height: 60px;
+  background: #1f1f35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  color: #e0e0e0;
+  border-bottom: 1px solid rgba(0, 224, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.navbar h1 {
+  font-size: 20px;
+  color: #00e0ff;
+}
+
+.navbar .profile {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .profile img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #00e0ff;
+  margin-left: 10px;
+}
+
+/* Scrollbar for main content */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: #1b1b2f;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: #00e0ff;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 200px;
+    padding: 15px 20px;
+  }
+}

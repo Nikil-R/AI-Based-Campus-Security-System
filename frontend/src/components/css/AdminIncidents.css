@@ -1,0 +1,386 @@
+/* AdminIncidents Component - Modern Dark Command Center Theme */
+
+/* Main Container */
+.incidents-container {
+  height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1419 50%, #0a0e1a 100%);
+  padding: 32px 48px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Animated Background Grid Pattern */
+.incidents-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Content Wrapper */
+.incidents-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.incidents-container h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  padding-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.incidents-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* Table Container with Scroll */
+.table-wrapper {
+  flex: 1;
+  overflow: auto;
+  background: rgba(20, 27, 45, 0.8);
+  backdrop-filter: blur(10px);
+  border: 2px solid #1e293b;
+  border-radius: 16px;
+  padding: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Scrollbar */
+.table-wrapper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 5px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 5px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Table Styling */
+.incidents-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+  min-width: 1200px;
+}
+
+/* Table Head */
+.incidents-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.incidents-table thead tr {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.incidents-table thead th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #3b82f6;
+  background: #1e293b;
+  white-space: nowrap;
+}
+
+.incidents-table thead th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.incidents-table thead th:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Table Body */
+.incidents-table tbody tr {
+  background: rgba(20, 27, 45, 0.4);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #1e293b;
+}
+
+.incidents-table tbody tr:hover {
+  background: rgba(30, 41, 59, 0.6);
+  transform: scale(1.01);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
+}
+
+.incidents-table tbody td {
+  padding: 16px 20px;
+  color: #e2e8f0;
+  font-size: 14px;
+  border-right: 1px solid rgba(30, 41, 59, 0.5);
+  vertical-align: middle;
+}
+
+.incidents-table tbody td:last-child {
+  border-right: none;
+}
+
+/* ID Column */
+.incidents-table tbody td:first-child {
+  color: #60a5fa;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+/* Title Column */
+.incidents-table tbody td:nth-child(2) {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Description Column */
+.incidents-table tbody td:nth-child(3) {
+  color: #cbd5e1;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Status Column - Resolved */
+.status-resolved {
+  color: #34d399 !important;
+  font-weight: 700;
+  padding: 6px 12px !important;
+  background: rgba(16, 185, 129, 0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+/* Status Column - Pending */
+.status-pending {
+  color: #fbbf24 !important;
+  font-weight: 700;
+  padding: 6px 12px !important;
+  background: rgba(251, 191, 36, 0.15);
+  border-radius: 8px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+/* Timestamp Column */
+.incidents-table tbody td:nth-child(6) {
+  color: #64748b;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Action Button */
+.resolve-button {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.resolve-button:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+  transform: translateY(-2px);
+}
+
+.resolve-button:active {
+  transform: translateY(0);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #64748b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.empty-state::before {
+  content: '📋';
+  display: block;
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+/* Loading State */
+.loading-state {
+  text-align: center;
+  padding: 80px 20px;
+  color: #60a5fa;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.loading-state::before {
+  content: '⏳';
+  display: block;
+  font-size: 64px;
+  margin-bottom: 16px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .incidents-container {
+    padding: 28px 32px;
+  }
+
+  .incidents-table {
+    min-width: 1100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .incidents-container {
+    padding: 24px 24px;
+  }
+
+  .incidents-container h2 {
+    font-size: 28px;
+  }
+
+  .incidents-table {
+    min-width: 1000px;
+  }
+
+  .incidents-table thead th {
+    padding: 14px 16px;
+    font-size: 12px;
+  }
+
+  .incidents-table tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .incidents-container {
+    padding: 20px 16px;
+  }
+
+  .incidents-container h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .incidents-table {
+    min-width: 900px;
+  }
+
+  .incidents-table thead th {
+    padding: 12px 14px;
+    font-size: 11px;
+  }
+
+  .incidents-table tbody td {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  .resolve-button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* Animation on Page Load */
+.incidents-container {
+  animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Row Animation */
+.incidents-table tbody tr {
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.incidents-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.incidents-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.incidents-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.incidents-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.incidents-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

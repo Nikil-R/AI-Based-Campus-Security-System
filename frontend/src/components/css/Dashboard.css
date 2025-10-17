@@ -1,0 +1,94 @@
+/* src/components/Dashboard.css */
+
+/* Base container */
+.dashboard {
+  flex: 1;
+  padding: 30px 40px;
+  background: #1b1b2f; /* dark cyberpunk base */
+  color: #e0e0e0;
+  min-height: 100vh;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Header */
+.dashboard h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00e0ff; /* neon accent */
+  margin-bottom: 30px;
+}
+
+/* Table container */
+.table-container {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+/* Table styles */
+.log-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1f1f35;
+}
+
+.log-table thead {
+  background: #111133;
+}
+
+.log-table th,
+.log-table td {
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0, 224, 255, 0.1);
+}
+
+.log-table th {
+  color: #00e0ff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.log-table tbody tr:hover {
+  background: rgba(0, 224, 255, 0.05);
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+/* Status colors override in JS inline, kept minimal here */
+.log-table td strong {
+  color: #e0e0e0;
+}
+
+/* Scrollbar */
+.table-container::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #1b1b2f;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #00e0ff;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .log-table th,
+  .log-table td {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}

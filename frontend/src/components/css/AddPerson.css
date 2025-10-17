@@ -1,0 +1,338 @@
+/* Modern Dark Command Center Theme v2 - Premium Style */
+
+/* Container Styling */
+.form-container {
+  max-width: 520px;
+  margin: 60px auto;
+  padding: 48px;
+  background: #0a0e1a;
+  border-radius: 20px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  position: relative;
+}
+
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+  border-radius: 20px 20px 0 0;
+}
+
+/* Heading */
+.form-container h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-container h2::after {
+  content: 'Face Recognition System';
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: none;
+  -webkit-text-fill-color: #64748b;
+}
+
+/* Form Styling */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+/* Input Fields */
+.form-container input,
+.form-container select {
+  padding: 16px 20px;
+  font-size: 15px;
+  color: #e2e8f0;
+  background: #141b2d;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 500;
+}
+
+.form-container input::placeholder {
+  color: #475569;
+  font-weight: 400;
+}
+
+/* Hover States */
+.form-container input:hover,
+.form-container select:hover {
+  border-color: #334155;
+  background: #1a2235;
+}
+
+/* Focus States */
+.form-container input:focus,
+.form-container select:focus {
+  background: #1a2235;
+  border-color: #3b82f6;
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.08),
+    0 8px 24px rgba(59, 130, 246, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Select Dropdown */
+.form-container select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 48px;
+}
+
+.form-container select option {
+  background: #141b2d;
+  color: #e2e8f0;
+  padding: 12px;
+}
+
+/* Button Styling */
+.form-container button {
+  padding: 18px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 50%, #1d4ed8 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 12px;
+  box-shadow:
+    0 0 0 0 rgba(59, 130, 246, 0),
+    0 8px 24px rgba(59, 130, 246, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-container button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.form-container button:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.15),
+    0 12px 32px rgba(59, 130, 246, 0.35);
+  transform: translateY(-3px);
+}
+
+.form-container button:hover::before {
+  opacity: 1;
+}
+
+.form-container button:active {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.15),
+    0 4px 16px rgba(59, 130, 246, 0.3);
+}
+
+/* Disabled Button */
+.form-container button:disabled {
+  background: #1e293b;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.5;
+}
+
+.form-container button:disabled::before {
+  display: none;
+}
+
+/* Message Display */
+.form-container p {
+  margin-top: 24px;
+  padding: 18px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 12px;
+  text-align: left;
+  line-height: 1.6;
+  animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 4px solid;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Success Message */
+.form-container p:has-text('✅') {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+  border-left-color: #10b981;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.1);
+}
+
+/* Error Message */
+.form-container p:has-text('❌') {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border-left-color: #ef4444;
+  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.1);
+}
+
+/* Info/Loading Message */
+.form-container p:has-text('📸'),
+.form-container p:has-text('⚠️') {
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  border-left-color: #3b82f6;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
+}
+
+/* General message styling */
+.form-container p {
+  background: rgba(100, 116, 139, 0.1);
+  color: #94a3b8;
+  border-left-color: #64748b;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading State Animation */
+.form-container button:disabled {
+  position: relative;
+}
+
+.form-container button:disabled::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  right: 24px;
+  margin-top: -9px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Input Icons Effect */
+.form-container input:focus::before,
+.form-container select:focus::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #3b82f6, #06b6d4);
+  border-radius: 12px 0 0 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    margin: 30px 20px;
+    padding: 36px 28px;
+  }
+
+  .form-container h2 {
+    font-size: 28px;
+  }
+
+  .form-container input,
+  .form-container select {
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .form-container button {
+    padding: 16px 28px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    margin: 20px 16px;
+    padding: 28px 24px;
+  }
+
+  .form-container h2 {
+    font-size: 24px;
+  }
+
+  .form-container h2::after {
+    font-size: 11px;
+  }
+
+  .form-container input,
+  .form-container select {
+    padding: 13px 16px;
+  }
+}
+
+/* Smooth Page Entry Animation */
+.form-container {
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

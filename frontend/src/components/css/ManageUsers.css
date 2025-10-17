@@ -1,0 +1,93 @@
+/* src/components/ManageUsers.css */
+
+.manage-users {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #1f1f2e; /* dark theme */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.manage-users h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #4ade80; /* green accent */
+}
+
+.manage-users input,
+.manage-users select,
+.manage-users button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.manage-users input,
+.manage-users select {
+  background: #2a2a3c;
+  color: #f0f0f0;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.manage-users input:focus,
+.manage-users select:focus {
+  outline: 2px solid #4ade80;
+  background: #33334d;
+}
+
+.manage-users button {
+  background: #4ade80;
+  color: #1f1f2e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.manage-users button:hover {
+  background: #22c55e;
+  transform: translateY(-2px);
+}
+
+.manage-users table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #2a2a3c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.manage-users table th,
+.manage-users table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.manage-users table th {
+  background: #1f1f2e;
+  color: #4ade80;
+}
+
+.manage-users table tr:nth-child(even) {
+  background: #24243a;
+}
+
+.manage-users table tr:hover {
+  background: #33334d;
+}
+
+.manage-users table button {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  margin-right: 5px;
+}
+
+.manage-users table button:hover {
+  opacity: 0.9;
+}

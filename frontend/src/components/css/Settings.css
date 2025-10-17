@@ -1,0 +1,9 @@
+/* Settings.css */
+.light {
+  background-color: #f7fafc;
+  color: #1a202c;
+}
+.dark {
+  background-color: #1a202c;
+  color: #f7fafc;
+}

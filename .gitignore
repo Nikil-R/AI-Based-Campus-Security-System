@@ -1,0 +1,19 @@
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/uploads/
+
+# Frontend
+frontend/node_modules/
+frontend/build/
+
+# Python / AI module
+ai_module/__pycache__/
+ai_module/models/
+*.pyc
+
+# IDE / system
+.idea/
+.vscode/
+.DS_Store

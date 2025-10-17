@@ -1,0 +1,85 @@
+/* src/css/Help.css */
+
+.help-container {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937; /* gray-800 */
+}
+
+/* -------- Panic Section -------- */
+.panic-section {
+  background: #ffe5e5; /* light red */
+  border: 2px solid #f87171; /* red-400 */
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.panic-button {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.panic-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.details-input textarea {
+  border: 1px solid #d1d5db; /* gray-300 */
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  width: 100%;
+  font-size: 1rem;
+  resize: none;
+}
+
+/* -------- FAQ Section -------- */
+.faq-section {
+  background: #f9fafb; /* gray-50 */
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.faq-section ul {
+  list-style: disc inside;
+  line-height: 1.6;
+}
+
+/* -------- Contact Section -------- */
+.contact-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.contact-section ul {
+  line-height: 1.6;
+}
+
+/* -------- System Info Section -------- */
+.system-section {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 640px) {
+  .panic-button {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+
+  .panic-section, .faq-section, .contact-section, .system-section {
+    padding: 1rem;
+  }
+}

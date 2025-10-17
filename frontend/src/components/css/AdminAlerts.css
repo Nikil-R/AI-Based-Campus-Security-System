@@ -1,0 +1,364 @@
+/* AdminAlerts Component - Modern Dark Command Center Theme */
+
+/* Main Container */
+.admin-alerts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+  min-height: 100vh;
+  background: #0a0e1a;
+}
+
+/* Header Section */
+.admin-alerts-container h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.admin-alerts-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+}
+
+/* Empty State */
+.admin-alerts-container > p {
+  color: #64748b;
+  font-size: 16px;
+  text-align: center;
+  padding: 80px 20px;
+  background: #141b2d;
+  border: 2px dashed #1e293b;
+  border-radius: 16px;
+  margin-top: 24px;
+  font-weight: 500;
+}
+
+.admin-alerts-container > p::before {
+  content: '📭';
+  display: block;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+/* Alerts List */
+.alerts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Individual Alert Card */
+.alert-card {
+  background: #141b2d;
+  border: 2px solid #dc2626;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInAlert 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.alert-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #dc2626, #ef4444, #f87171);
+}
+
+.alert-card:hover {
+  background: #1a2235;
+  border-color: #ef4444;
+  box-shadow:
+    0 0 0 4px rgba(220, 38, 38, 0.1),
+    0 12px 32px rgba(220, 38, 38, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Alert Header */
+.alert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.alert-user {
+  color: #f87171;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.alert-user::before {
+  content: '🚨 ';
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.alert-time {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(100, 116, 139, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+}
+
+/* Alert Location */
+.alert-location {
+  color: #e2e8f0;
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.alert-location::before {
+  content: '📍';
+  font-size: 16px;
+}
+
+/* Alert Details */
+.alert-details {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 16px;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 10px;
+  border-left: 3px solid #3b82f6;
+  font-weight: 400;
+}
+
+.alert-details::before {
+  content: 'Details: ';
+  color: #60a5fa;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Alert Status Badge */
+.alert-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(220, 38, 38, 0.15);
+  color: #f87171;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+.alert-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #ef4444;
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Pulse Animation for Status Indicator */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+
+/* Slide In Animation for New Alerts */
+@keyframes slideInAlert {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Alert Count Badge */
+.alerts-count {
+  display: inline-block;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 12px;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Action Buttons Section */
+.alert-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #1e293b;
+}
+
+.alert-btn {
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.alert-btn-acknowledge {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.alert-btn-acknowledge:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.alert-btn-dismiss {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+}
+
+.alert-btn-dismiss:hover {
+  background: #334155;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-alerts-container {
+    padding: 20px 16px;
+  }
+
+  .admin-alerts-container h2 {
+    font-size: 26px;
+  }
+
+  .alert-card {
+    padding: 20px;
+  }
+
+  .alert-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .alert-user {
+    font-size: 16px;
+  }
+
+  .alert-actions {
+    flex-direction: column;
+  }
+
+  .alert-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-alerts-container {
+    padding: 16px 12px;
+  }
+
+  .admin-alerts-container h2 {
+    font-size: 24px;
+  }
+
+  .alert-card {
+    padding: 16px;
+  }
+
+  .alert-user {
+    font-size: 15px;
+  }
+
+  .alert-location {
+    font-size: 14px;
+  }
+}
+
+/* Filter/Sort Bar (if you add it later) */
+.alerts-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.alerts-filter-btn {
+  padding: 10px 18px;
+  background: #141b2d;
+  border: 2px solid #1e293b;
+  color: #94a3b8;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.alerts-filter-btn:hover {
+  border-color: #3b82f6;
+  color: #60a5fa;
+  background: #1a2235;
+}
+
+.alerts-filter-btn.active {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
